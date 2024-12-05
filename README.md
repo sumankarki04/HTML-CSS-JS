@@ -4,7 +4,7 @@
 - 💞️ I’m looking to collaborate on no one
 - 📫 How to reach me reachsumankarki1@gmial.com
 - 😄 Pronouns: he/him
-- ⚡ Fun fact: i know to center div
+- ⚡ Fun fact: First computer bug was an actual insect!
 
 <!---
 sumankarki04/sumankarki04 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
