@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container{
+        
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1) ;
+        }
+        h1{
+            text-align: center;
+        }
+        .input-section{
+         display: flex;
+        justify-content: center; 
+            gap:10px;
+            margin-bottom: 30px;
+        }
+        #todoInput{
+            flex:1;
+            padding: 12px;
+            border:2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        #todoInput:focus{
+            outline: none;
+            border-color: darkcyan;
+        }
+        button{
+            padding: 12px 20px;
+            background: darkcyan;
+            color: white;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover{
+            background:rgb(2, 102, 102); 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Techspire Todo</h1>
+        <div class="input-section">
+            <input type="text" id="todoInput" placeholder="Enter your task...">
+            <button onclick= "addTodo()">Add Task</button>
+        </div>
+        <ul class="todo-list" id="todolist">
+        
+        
+        </ul>
+    </div>
+    
+</body>
+<script>
+
+    let todos=localStorage.getItem("todos") || []
+
+    function addTodo(){
+    const input=document.getElementById("todoInput")
+    const text=input.value.trim()
+    if(text){
+        const todo={
+            id:Date.now(),
+            text,
+            completed:false,
+            createdAt:new Date().toISOString()
+        }
+        todos.unshift(todo)
+
+        saveTodos()
+    }
+}
+
+function saveTodos(){
+    localStorage.setItem("todos",JSON.stringify(todos))
+}
+</script>
+</html>
